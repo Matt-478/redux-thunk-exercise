@@ -16,11 +16,11 @@ export const fetchAction = (url) => {
       if(resp.ok) {
         const data = await resp.json()
         console.log(data)
-        console.log(data.body)
         dispatch({
           type: "FETCH_MOVIES",
           payload: data,
         })
+        console.log(data[0].question)
       } else {
         return (console.log("some error happened"))
       }
